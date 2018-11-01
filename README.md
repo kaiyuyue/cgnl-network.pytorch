@@ -4,7 +4,7 @@ By [Kaiyu Yue](http://kaiyuyue.com), [Ming Sun](https://msunming.github.io/), [Y
 
 ## Introduction
 
-This is a [PyTorch](https://pytorch.org/) re-implementation for the paper Compact Generalized Non-local (CGNL) Network [ADD LINK]. It brings the CGNL models trained on the [CUB-200](http://www.vision.caltech.edu/visipedia/CUB-200.html), [ImageNet](http://image-net.org/index) and [COCO](http://cocodataset.org/) based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) from FAIR.
+This is a [PyTorch](https://pytorch.org/) re-implementation for the paper [Compact Generalized Non-local Network](https://arxiv.org/abs/1810.13125). It brings the CGNL models trained on the [CUB-200](http://www.vision.caltech.edu/visipedia/CUB-200.html), [ImageNet](http://image-net.org/index) and [COCO](http://cocodataset.org/) based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) from FAIR.
 
 ![introfig](img/intro.jpg)
 
@@ -55,7 +55,7 @@ The code is developed and tested under 8 Tesla P40 / V100-SXM2-16GB GPUS cards o
 ### Notes:
   - The input size is 448.
   - The CGNLx block with Gaussian RBF \[[0](#reference)\]\[[1](#reference)\] kernel is configured within 8 groups.
-  - The Talyor Expansion order for the kernel function is 3.
+  - The Taylor Expansion order for the kernel function is 3.
 
 ## Experiments on ImageNet Dataset
 
