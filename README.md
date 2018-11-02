@@ -78,10 +78,12 @@ The code is developed and tested under 8 Tesla P40 / V100-SXM2-16GB GPUS cards o
 | ----------------------- | ---- | -------- | -------- | ------------- | ------------------- | -------------------- | -------------------- | ------ | ------- |:--------:|:------------:|:----------:|
 | R-50-C4                 | Mask | 1x       | 1        | 5.641         | 0.5434              | 27.3                 | 0.18329 + 0.011      | 35.6   | 31.5    | [6358801](https://download.pytorch.org/models/maskrcnn/e2e_mask_rcnn_R_50_C4_1x.pth) | - | - |
 | R-50-C4 w/ 1 CGNL Block | Mask | 1x       | 1        | 5.868         | 0.5785              | 28.5                 | 0.20326 + 0.008      | 36.3   | 32.1    | -  | [`link`](https://drive.google.com/file/d/1n1hVs2r0FIbsiZyQAQkwxGYtYhpq5RjH/view?usp=sharing)   | [`link`](https://pan.baidu.com/s/18Yl5MRGzniNpMxfwKUFu7g) |
+| R-50-C4 w/ 1 CGNLx Block| Mask | <details><summary>s1x</summary>`_C.SOLVER.WARMUP_ITERS = 20000`<br/>`STEPS: (140000, 180000)`<br/>`MAX_ITER: 200000`</details>        | 1        | 5.977         | 0.5855              | 32.3                 | 0.18571 + 0.010      | 36.2   | 31.9    | -  | [`link`](https://drive.google.com/file/d/1oiSCFd7N_ULpexIYfE5uZ53q5ytmhKbj/view?usp=sharing)   | [`link`](https://pan.baidu.com/s/1C_8UneEHnt-jfHx9TWeVwQ) |
 
 ### Notes:
   - The CGNL model is simply trained using the same experimental strategy as in [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). It is configured as same as above experiments on CUB-200.
   - If you want to add the `CGNL` / `CGNLx` / `NL` blocks to the backbone of Mask-RCNN models, you can use the `maskrcnn-benchmark/modeling/backbone/resnet.py` and `maskrcnn-benchmark/utils/c2_model_loading.py` to replace the original py-files. Please refer to the code for specific configurations.
+  - Prolonging the `WARMUP_ITERS` appropriately would produce the better results for CGNL models in Mask R-CNN.
   - Due to some reasons of the Linux virtual environment or the data I/O speed, the numbers of `train time`, `total train time` and `inference time` in above table are both larger than the benchmarks. But this does not affect the demonstration of the efficiency of CGNL block.
 
 ## Getting Start
