@@ -83,7 +83,7 @@ The code is developed and tested under 8 Tesla P40 / V100-SXM2-16GB GPUS cards o
 ### Notes:
   - The CGNL model is simply trained using the same experimental strategy as in [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). It is configured as same as above experiments on CUB-200.
   - If you want to add the `CGNL` / `CGNLx` / `NL` blocks to the backbone of Mask-RCNN models, you can use the `maskrcnn-benchmark/modeling/backbone/resnet.py` and `maskrcnn-benchmark/utils/c2_model_loading.py` to replace the original py-files. Please refer to the code for specific configurations.
-  - Prolonging the `WARMUP_ITERS` appropriately would produce the better results for CGNL models in Mask R-CNN.
+  - Prolonging the `WARMUP_ITERS` appropriately would produce the better results for CGNL models. The long training schedule is also recommended, like `2x` or `1.44x` in [Detectron](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md#training-schedules).
   - Due to some reasons of the Linux virtual environment or the data I/O speed, the numbers of `train time`, `total train time` and `inference time` in above table are both larger than the benchmarks. But this does not affect the demonstration of the efficiency of CGNL block.
 
 ## Getting Start
