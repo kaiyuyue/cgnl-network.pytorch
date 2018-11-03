@@ -14,8 +14,8 @@ If you think this code is useful in your research or wish to refer to the baseli
 
 ```
 @article{CGNLNetwork2018,
+    author={Kaiyu Yue and Ming Sun and Yuchen Yuan and Feng Zhou and Errui Ding and Fuxin Xu},
     title={Compact Generalized Non-local Network},
-    author={Kaiyu Yue, Ming Sun, Yuchen Yuan, Feng Zhou, Errui Ding and Fuxin Xu},
     journal={NIPS},
     year={2018}
 }
