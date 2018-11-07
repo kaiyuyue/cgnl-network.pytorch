@@ -255,6 +255,16 @@ class SpatialCGNLx(nn.Module):
         # gamma
         gamma = torch.Tensor(1).fill_(1e-4)
 
+        # NOTE:
+        # We want to keep the high-order feature spaces in Taylor expansion to 
+        # rich the feature representation, so the l2 norm is not used here.
+        # 
+        # Under the above precondition, the β should be calculated 
+        # by β = exp(−γ(∥θ∥^2 +∥φ∥^2)). 
+        # But in the experiments, we found training becomes very difficult. 
+        # So we simplify the implementation to 
+        # ease the gradient computation through calculating the β = exp(−2γ).
+
         # beta
         beta = torch.exp(-2 * gamma)
 
