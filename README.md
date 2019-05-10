@@ -8,6 +8,10 @@ This is a [PyTorch](https://pytorch.org/) re-implementation for the paper [Compa
 
 ![introfig](img/intro.jpg)
 
+## Update
+
+- 05/2019: Support CGNL & NL Module in Caffe - see [`caffe/README.md`](./caffe/README.md)
+
 ## Citation
 
 If you think this code is useful in your research or wish to refer to the baseline results published in our paper, please use the following BibTeX entry.
